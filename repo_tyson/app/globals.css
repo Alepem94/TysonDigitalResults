@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body { @apply bg-slate-100 text-slate-800; }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-5;
+  }
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-card-hover;
+  }
+  .section-title {
+    @apply text-xs font-bold uppercase tracking-[0.12em] text-tyson-red mb-4;
+  }
+  .metric-label {
+    @apply text-xs font-medium text-slate-400 uppercase tracking-wider;
+  }
+  .metric-value {
+    @apply text-3xl font-extrabold text-slate-800 leading-none;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .progress-track {
+    @apply h-1.5 bg-slate-100 rounded-full overflow-hidden;
+  }
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700;
+  }
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-slate-400
+           transition-all duration-150 hover:text-white hover:bg-white/5;
+  }
+  .nav-link.active {
+    @apply text-white bg-white/10 border-l-2 border-tyson-red;
+  }
+  .compare-btn {
+    @apply px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all duration-150;
+  }
+  .compare-btn.active {
+    @apply bg-tyson-red text-white border-tyson-red;
+  }
+  .compare-btn:not(.active) {
+    @apply bg-white text-slate-500 border-slate-200 hover:border-slate-300;
+  }
+}
+
+/* Staggered card animation */
+.cards-grid > *:nth-child(1) { animation-delay: 0ms;   }
+.cards-grid > *:nth-child(2) { animation-delay: 60ms;  }
+.cards-grid > *:nth-child(3) { animation-delay: 120ms; }
+.cards-grid > *:nth-child(4) { animation-delay: 180ms; }
+.cards-grid > *:nth-child(5) { animation-delay: 240ms; }
+.cards-grid > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Recharts custom */
+.recharts-tooltip-wrapper { outline: none; }

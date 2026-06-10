@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  body { @apply bg-tyson-bg text-tyson-dark; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', system-ui, sans-serif; }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+}
+
+@layer components {
+  .card {
+    @apply bg-tyson-card rounded-3xl shadow-card p-6 md:p-8 border border-black/5;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:border-black/10;
+  }
+  .section-title {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-tyson-burgundy mb-4;
+  }
+  .metric-label {
+    @apply text-[13px] font-semibold text-slate-500 uppercase tracking-widest;
+  }
+  .metric-value {
+    @apply text-4xl md:text-5xl font-extrabold text-tyson-dark leading-none tracking-tight font-display;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-bold;
+  }
+  .progress-track {
+    @apply h-2 bg-slate-100 rounded-full overflow-hidden;
+  }
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 bg-tyson-burgundy;
+  }
+  .nav-link {
+    @apply flex items-center gap-4 px-4 py-3 rounded-2xl text-[14px] font-bold text-slate-500
+           transition-all duration-200 hover:text-tyson-burgundy hover:bg-slate-50;
+  }
+  .nav-link.active {
+    @apply text-tyson-burgundy bg-white shadow-sm border border-slate-100;
+  }
+  .compare-btn {
+    @apply px-4 py-2 text-[13px] font-bold rounded-xl border transition-all duration-200;
+  }
+  .compare-btn.active {
+    @apply bg-tyson-burgundy text-white border-tyson-burgundy shadow-md;
+  }
+  .compare-btn:not(.active) {
+    @apply bg-white text-slate-500 border-slate-200 hover:border-slate-300 hover:text-tyson-dark;
+  }
+}
+
+/* Staggered card animation */
+.cards-grid > *:nth-child(1) { animation-delay: 0ms;   }
+.cards-grid > *:nth-child(2) { animation-delay: 60ms;  }
+.cards-grid > *:nth-child(3) { animation-delay: 120ms; }
+.cards-grid > *:nth-child(4) { animation-delay: 180ms; }
+.cards-grid > *:nth-child(5) { animation-delay: 240ms; }
+.cards-grid > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Recharts custom */
+.recharts-tooltip-wrapper { outline: none; }
