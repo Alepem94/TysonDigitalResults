@@ -29,11 +29,11 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="px-6 py-8 border-b border-black/10 relative overflow-hidden flex flex-col items-center justify-center">
         <div className="flex flex-col items-center gap-3 relative z-10 w-full mt-2">
-          <div className="w-[72px] h-[72px] rounded-full shadow-lg overflow-hidden flex items-center justify-center border-4 border-tyson-yellow/30 bg-tyson-red">
+          <div className="w-[60px] h-[60px] rounded-full shadow-lg overflow-hidden flex items-center justify-center border-4 border-tyson-yellow/30 bg-tyson-red">
            <img
               src="/tyson-logo.jpg"
               alt="Tyson"
-              className="w-full h-full object-contain rounded-full scale-110"
+              className="w-full h-full object-cover rounded-full scale-110"
             />
           </div>
           <div className="text-white text-[11px] font-extrabold uppercase tracking-[0.2em] mt-2 text-center pb-2 px-2 opacity-90 drop-shadow-sm">
